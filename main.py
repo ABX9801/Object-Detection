@@ -13,8 +13,8 @@ option = {
 tfnet = TFNet(option)
 
 capture = cv2.VideoCapture('dataset/gta52.mp4')
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-out = cv2.VideoWriter('output/output1.mp4',fourcc,20.0,(640,480))
+fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+out = cv2.VideoWriter('output/output1.mp4',fourcc,20.0,(1280,720))
 
 while (capture.isOpened()):
     ret,frame = capture.read()
@@ -24,9 +24,10 @@ while (capture.isOpened()):
             tl = (results[i]['topleft']['x'],results[i]['topleft']['y'])
             br = (results[i]['bottomright']['x'],results[i]['bottomright']['y'])
             label = results[i]['label']
-            frame = np.array(frame,np.uint8)
-            frame= cv2.rectangle(frame,tl,br,(0,255,0),7)
+            #frame = np.array(frame,np.uint8)
+            frame= cv2.rectangle(frame,tl,br,(0,255,0),3)
             frame = cv2.putText(frame,label,tl,cv2.FONT_HERSHEY_COMPLEX,1,(255,0,0),2)
+            frame = cv2.resize(frame,(1280,720))
         cv2.imshow('frame',frame)
         out.write(frame)
         
