@@ -5,6 +5,9 @@
 
 
 **The raw video file recorded from gta5**
+
+
+
 ![Object Detection Demo](dataset/gta52.gif)
 
 
@@ -49,4 +52,6 @@ tf.disable_v2_behavior()
 - if using cpu version we can remove 'gpu': 1.0 from options
 
 **The processed video file**
+
+
 ![Object Detection Demo](output/output1.gif)
