@@ -30,9 +30,13 @@ tf.disable_v2_behavior()
 
 **Build the Library**
 - open an cmd window and type:
+```shell
   - python setup.py build_ext --inplace
+  ```
   or
-  - pip install -e 
+  ```shell
+  - pip install -e
+  ```
 
 **Download weights file from [here](https://pjreddie.com/darknet/yolov2/)**
 
@@ -40,9 +44,10 @@ tf.disable_v2_behavior()
 **Demo conversion**
 - move the video file into the darkflow-master
 - from there, open a cmd window
-- use the command: 
-    - python flow --model cfg/yolo.cfg --load bin/yolov2.weights --demo videofile.mp4 --gpu 1.0 --saveVideo
-
+- use the command:
+```shell
+python flow --model cfg/yolo.cfg --load bin/yolov2.weights --demo videofile.mp4 --gpu 1.0 --saveVideo
+```
 - videofile.mp4 is the name of your video.
 - NOTE: if you do not have the GPU version of tensorflow, leave off the --gpu 1.0
 - --saveVideo indicates to save a name video file, which has the boxes around objects
